@@ -13,6 +13,28 @@ function computerSelection () {
 }
 
 //get input from player
+function playerSelection() {
+    //create variable playerInput and fill it
+    let playerInput = prompt("Pick your play: ", "empty");
+
+    //check if it's a string
+    if ((typeof playerInput) != "string") {
+        console.log("Please pick either rock, paper or scissors.");
+        return playerSelection();
+        }
+
+    //create variable for lowercase string
+    let playerInputLower = playerInput.toLowerCase().trim();
+
+    //return the input if it's one of three options
+    if ((playerInputLower == "rock") || (playerInputLower == "paper") || (playerInputLower == "scissors")) return playerInputLower;
+    else {
+        console.log("Please pick either rock, paper or scissors.")
+        return playerSelection();
+    }
+
+    //propmpt player again if it doesn't match options
+}
 
 //evaluate matchup - playRound function
 
